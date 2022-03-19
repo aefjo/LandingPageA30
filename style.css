@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing : border-box;
+}
+
+main {
+    position: relative;
+    font-family: poppins;
+}
+
+main nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 9;
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center;
+    padding-left: 40px;
+    transition: 1s;
+}
+
+main nav.sticky {
+    background: #121212;
+}
+
+main nav.sticky .logo a {
+    opacity: 1;
+}
+
+main nav .logo a {
+    font-size: 3em;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    transition: 1s;
+}
+
+
+/* Toggle */
+main nav #toggle {
+    position: fixed;
+    top: 15px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+main nav #toggle span {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    transition: 0.5s;
+}
+
+main nav #toggle.active span:nth-child(1) {
+    transform: translateY(35px);
+}
+main nav #toggle.active span:nth-child(2) {
+    transform: rotate(45deg);
+}
+main nav #toggle.active span:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+}
+
+/* Navbar */
+main nav .navbar {
+    position: fixed;
+    top: 0;
+    right: -40%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    width: 40%;
+    height: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    transition: 0.5s;
+}
+main nav .navbar.active {
+    right: 0%;
+}
+
+main nav .navbar h2 {
+    font-size: 2em;
+}
+
+main nav .navbar h2 a {
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+}
+main nav .navbar h2 a:hover {
+    color: crimson;
+}
+
+/* Header */
+main header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+main header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+main header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 6em;
+    text-align: center;
+}
+
+main section {
+    height: 100vh;
+    padding-top: 100px;
+    position: relative;
+}
+
+main section h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+main section .content {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+main section .content .pic {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    transition: 0.5s;
+}
+
+main section .content .pic:hover img {
+    opacity: 1;
+}
+
+main section .content .pic:hover h3 {
+    opacity: 1;
+}
+
+main section .content .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+main section .content .pic h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+    color: white;
+    opacity: 0;
+}
+
+main section footer {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+@media (max-width:1000px) {
+    main header h1 {
+        font-size: 5em;
+    }
+    main section {
+        height: auto;
+    }
+
+    main section .content .pic {
+        width: 300px;
+        height: 100px;
+    }
+
+    main section .content {
+        padding-bottom: 50px;
+    }   
+}
+
+@media (max-width:670px) {
+    main nav .logo a {
+        font-size: 2em;
+    }
+
+    main section {
+        height: auto;
+    }
+
+    main header h1 {
+        font-size: calc(3em + 5px);
+    }
+
+    main nav .navbar {
+        right: -100%;
+        width: 100%;
+        gap: 40px;
+    }
+
+    main section .content {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 50px;
+    }
+
+    main section .content .pic {
+        width: 100%;
+        height: 150px;
+    }
+
+    main section .content {
+        gap: 15px;
+    }
+}
